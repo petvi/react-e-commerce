@@ -1,13 +1,16 @@
 import React from "react";
 
+import Search from "./Search";
+
 import logo from "../logo.svg";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import {
   Navbar,
   Nav,
-  Form,
-  FormControl,
-  Button,
   Container,
 } from "react-bootstrap";
 
@@ -26,36 +29,18 @@ function MyNavbar() {
           React Store
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Search />
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-end"
         >
-          <Nav className="mr-auto">
-            <Form inline>
-              <FormControl
-                size="sm"
-                type="text"
-                placeholder="Search products..."
-                className="mr-sm-2"
-              />
-              <Button
-                variant="info"
-                size="sm"
-                style={{
-                  backgroundColor: "#61dafb",
-                  color: "#1a1a1a",
-                }}
-              >
-                Search
-              </Button>
-            </Form>
-          </Nav>
+          <Nav className="mr-auto"></Nav>
           <Nav>
             <Nav.Link href="#deets">
-              My Cart
-            </Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Sign In
+              <FontAwesomeIcon
+                icon={faShoppingCart}
+              />{" "}
+              Cart (0)
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

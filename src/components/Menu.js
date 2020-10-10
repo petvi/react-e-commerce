@@ -2,25 +2,24 @@ import React from "react";
 
 import { ListGroup } from "react-bootstrap";
 
-export default function Menu() {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import { faTags } from "@fortawesome/free-solid-svg-icons";
+
+export default function Menu(props) {
+  console.log(props.categories);
   return (
     <div>
-      <ListGroup>
-        <ListGroup.Item>
-          Cras justo odio
-        </ListGroup.Item>
-        <ListGroup.Item>
-          Dapibus ac facilisis in
-        </ListGroup.Item>
-        <ListGroup.Item>
-          Morbi leo risus
-        </ListGroup.Item>
-        <ListGroup.Item>
-          Porta ac consectetur ac
-        </ListGroup.Item>
-        <ListGroup.Item>
-          Vestibulum at eros
-        </ListGroup.Item>
+      <ListGroup className="menu">
+        {props.categories.map(
+          (category, index) => (
+            <ListGroup.Item key={index}>
+              <FontAwesomeIcon icon={faTags} />{" "}
+              {category.name} ({category.quantity}
+              )
+            </ListGroup.Item>
+          )
+        )}
       </ListGroup>
     </div>
   );

@@ -1,0 +1,16 @@
+.product {
+  margin-bottom: 1rem;
+}
+
+.product-description {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+@media (max-width: 992px) {
+  .menu {
+    margin-bottom: 1rem;
+  }
+}

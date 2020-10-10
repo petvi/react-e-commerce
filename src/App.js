@@ -14,16 +14,37 @@ import Menu from "./components/Menu";
 
 import products from "./api/products";
 
+let categories = [];
+
+for (let i = 0; i < products.length; i++) {
+  const dupIndex = categories.findIndex(
+    (cat) => cat.name === products[i].category
+  );
+
+  if (dupIndex !== -1) {
+    categories[dupIndex].quantity++;
+  } else {
+    categories.push({
+      quantity: 1,
+      name: products[i].category,
+    });
+  }
+}
+
+categories.sort(function (a, b) {
+  return b.quantity - a.quantity;
+});
+
 function App() {
   return (
     <div>
       <MyNavbar />
       <Container style={{ marginTop: "1rem" }}>
         <Row>
-          <Col className="">
-            <Menu />
+          <Col>
+            <Menu categories={categories} />
           </Col>
-          <Col className="" lg={9}>
+          <Col lg={9}>
             <Row>
               {products.map((product) => (
                 <Col md="4" key={product.id}>
@@ -32,6 +53,7 @@ function App() {
                     description={
                       product.description
                     }
+                    rating={product.rating}
                     img={product.img}
                     price={product.price}
                   />
