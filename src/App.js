@@ -8,7 +8,6 @@ import {
   Container,
 } from "react-bootstrap";
 
-import MyNavbar from "./components/MyNavbar";
 import HomeProduct from "./components/HomeProduct";
 import Menu from "./components/Menu";
 
@@ -38,8 +37,7 @@ categories.sort(function (a, b) {
 function App() {
   return (
     <div>
-      <MyNavbar />
-      <Container style={{ marginTop: "1rem" }}>
+      <Container>
         <Row>
           <Col>
             <Menu categories={categories} />
@@ -56,6 +54,7 @@ function App() {
                     rating={product.rating}
                     img={product.img}
                     price={product.price}
+                    id={product.id}
                   />
                 </Col>
               ))}

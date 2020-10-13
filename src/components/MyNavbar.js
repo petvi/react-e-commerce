@@ -1,11 +1,12 @@
 import React from "react";
 
+import { LinkContainer } from "react-router-bootstrap";
+
 import Search from "./Search";
 
 import logo from "../logo.svg";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -16,18 +17,26 @@ import {
 
 function MyNavbar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="md">
+    <Navbar
+      bg="dark"
+      variant="dark"
+      expand="md"
+      style={{ marginBottom: "1rem" }}
+    >
       <Container>
-        <Navbar.Brand href="#home">
-          <img
-            alt=""
-            src={logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-          />{" "}
-          React Store
-        </Navbar.Brand>
+        <LinkContainer to="/">
+          <Navbar.Brand>
+            <img
+              alt=""
+              src={logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{" "}
+            React Store
+          </Navbar.Brand>
+        </LinkContainer>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Search />
         <Navbar.Collapse
@@ -36,12 +45,18 @@ function MyNavbar() {
         >
           <Nav className="mr-auto"></Nav>
           <Nav>
-            <Nav.Link href="#deets">
-              <FontAwesomeIcon
-                icon={faShoppingCart}
-              />{" "}
-              Cart (0)
-            </Nav.Link>
+            <LinkContainer to="/cart">
+              <span
+                className="nav-link"
+                role="button"
+              >
+                {" "}
+                <FontAwesomeIcon
+                  icon={faShoppingCart}
+                />{" "}
+                Cart (0)
+              </span>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -7,7 +7,7 @@ export default [
     description:
       "Molestiae explicabo veritatis tempora quos blanditiis voluptatem sit provident voluptatibus.",
     category: "Shoes",
-    rating: 5,
+    rating: 4,
     id: 1,
   },
   {
@@ -62,7 +62,7 @@ export default [
     description:
       "Magni nihil vero aut repellat fuga. Saepe minima molestiae et quia dolores omnis consequatur omnis nihil.",
     category: "Belts",
-    rating: 5,
+    rating: 3,
     id: 6,
   },
 ];
