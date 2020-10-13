@@ -4,6 +4,8 @@ import { Card } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 
+import Rating from "./Rating";
+
 export default function HomeProduct(props) {
   return (
     <Card className="product">
@@ -21,17 +23,8 @@ export default function HomeProduct(props) {
           {props.description}
         </p>
       </Card.Body>
-      <Card.Footer className="text-warning">
-        {[...Array(props.rating)].map(
-          (rating, index) => (
-            <span key={index}>★</span>
-          )
-        )}
-        {[...Array(5 - props.rating)].map(
-          (rating, index) => (
-            <span key={index}>☆</span>
-          )
-        )}
+      <Card.Footer>
+        <Rating rating={props.rating} />
       </Card.Footer>
     </Card>
   );

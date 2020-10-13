@@ -38,12 +38,13 @@ function MyNavbar() {
         </LinkContainer>
 
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Search />
         <Navbar.Collapse
           id="basic-navbar-nav"
           className="justify-content-end"
         >
-          <Nav className="mr-auto"></Nav>
+          <Nav className="mr-auto">
+            <Search />
+          </Nav>
           <Nav>
             <LinkContainer to="/cart">
               <span
