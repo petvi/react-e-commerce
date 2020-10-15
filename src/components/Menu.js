@@ -7,7 +7,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTags } from "@fortawesome/free-solid-svg-icons";
 
 export default function Menu(props) {
-  console.log(props.categories);
   return (
     <div>
       <ListGroup className="menu">

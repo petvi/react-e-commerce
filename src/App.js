@@ -13,6 +13,8 @@ import Menu from "./components/Menu";
 
 import products from "./api/products";
 
+import store from "./store";
+
 let categories = [];
 
 for (let i = 0; i < products.length; i++) {
@@ -34,6 +36,8 @@ categories.sort(function (a, b) {
   return b.quantity - a.quantity;
 });
 
+let filteredProducts = store.getState();
+
 function App() {
   return (
     <div>
@@ -44,7 +48,7 @@ function App() {
           </Col>
           <Col lg={9}>
             <Row>
-              {products.map((product) => (
+              {filteredProducts.map((product) => (
                 <Col md="4" key={product.id}>
                   <HomeProduct
                     title={product.title}

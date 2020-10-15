@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import { updateFilter } from "../actions";
+import store from "../store";
+
 import {
   Form,
   FormControl,
@@ -20,6 +23,9 @@ export default class Search extends Component {
 
   handleChange(event) {
     this.setState({ value: event.target.value });
+    store.dispatch(
+      updateFilter(event.target.value)
+    );
   }
 
   render() {
